@@ -25,7 +25,7 @@ for df in dataframes:
     plt.clf()
 
     dark_sub = df - med_dark_frame
-    low, high = np.percentile(df.flatten(), [1,99])
+    low, high = np.percentile(dark_sub.flatten(), [1,99])
     plt.imshow(dark_sub, cmap=color_palette, vmin=low, vmax=high)
     plt.colorbar()
     plt.savefig(f'subtracted_fields/Albireo_V_100ms_00{i}.png')
